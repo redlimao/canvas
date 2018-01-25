@@ -5,7 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<canvas id="canvas" style="width: 300px;height: 300px;"></canvas>
+	<canvas id="canvas" width="300" height="300"></canvas>
 </body>
 <script type="text/javascript">
 	//动画的步骤
@@ -15,8 +15,8 @@
 	//4.恢复canvas状态
 	
 	//太阳系的动画
-	var time = new Date();
-	console.log( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds());
+	// var time = new Date();
+	// console.log( ((2*Math.PI)/60)*time.getSeconds() + ((2*Math.PI)/60000)*time.getMilliseconds());
 	var sun = new Image();
 	var moon = new Image();
 	var earth = new Image();
@@ -29,6 +29,7 @@
 
 	function draw (argument) {
 		var ctx = document.getElementById('canvas').getContext('2d');
+		//之前的把之后的覆盖掉
 		ctx.globalCompositeOperation = 'destination-over';
 		//混合模式
 		ctx.clearRect(0,0,300,300);
@@ -65,6 +66,6 @@
 
 		window.requestAnimationFrame(draw);
 	}
-init();
+	init();
 </script>
 </html>
